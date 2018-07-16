@@ -1,4 +1,4 @@
-# springBoot_Mongo_Rest
+# SpringBoot_Mongo_Rest
 Spring Boot project with MongoDB
 
 # Collections
