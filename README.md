@@ -2,10 +2,10 @@
 Spring Boot project with MongoDB
 
 # Collections
-There are two collection in this demo project. 
+There are two mongo collections in this demo project. 
 - User
 - Vehicle
-There is a oneToMay relation between user and vehicle. 
+(_There is a oneToMay relation between user and vehicle._)
 
 # Error Response
 Error response instance is responsible for holding the error code and message, in case of an error.
