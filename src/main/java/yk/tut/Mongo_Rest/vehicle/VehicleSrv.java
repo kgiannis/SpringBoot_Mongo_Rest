@@ -25,7 +25,7 @@ public class VehicleSrv {
 		return vehicleRepo.findAll();
 	}
 	
-	public Vehicle findByUser(User user) {
+	public List<Vehicle> findByUser(User user) {
 		return vehicleRepo.findByUser(user);
 	}
 	
