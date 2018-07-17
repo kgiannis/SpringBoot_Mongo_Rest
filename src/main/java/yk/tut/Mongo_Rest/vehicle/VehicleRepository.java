@@ -8,5 +8,5 @@ import yk.tut.Mongo_Rest.user.User;
 @Repository
 public interface VehicleRepository extends MongoRepository<Vehicle, Long> {
 
-	public Vehicle findByUser(User user);
+	public List<Vehicle> findByUser(User user);
 }
