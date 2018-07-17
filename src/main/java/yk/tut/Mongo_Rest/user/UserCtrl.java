@@ -6,7 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +23,7 @@ public final class UserCtrl {
 		this.userSrv = userSrv;
 	}
 	
-	@GetMapping("/find/{id}")
+	@GetMapping("/{id}")
 	public ResponseEntity<?> find(@PathVariable Long id){
 		User user = userSrv.findById(id);
 		if(user == null) {
@@ -33,7 +32,7 @@ public final class UserCtrl {
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 	
-	@GetMapping("/find")
+	@GetMapping("/")
 	public ResponseEntity<?> findAll(){
 		List<User> users = userSrv.findAll();
 		if(users == null) {
@@ -42,16 +41,7 @@ public final class UserCtrl {
 		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
 	}
 	
-	@PostMapping("/create")
-	public ResponseEntity<?> create(@RequestBody User user){
-		if(user == null) {
-			return new ResponseEntity<ResponseError>(new ResponseError(12, "Request error, null object."), HttpStatus.BAD_REQUEST);
-		} 
-		userSrv.save(user);
-		return new ResponseEntity<User>(user, HttpStatus.OK);
-	}
-	
-	@PutMapping("/update")
+	@PutMapping("/")
 	public ResponseEntity<?> update(@RequestBody User user){
 		if(user == null) {
 			return new ResponseEntity<ResponseError>(new ResponseError(12, "Request error, null object."), HttpStatus.BAD_REQUEST);
