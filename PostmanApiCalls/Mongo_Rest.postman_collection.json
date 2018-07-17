@@ -1,0 +1,153 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Mongo_Rest",
+		"_postman_id": "f14ffc77-7de0-b088-82ed-8c9350556564",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Api_Vehicle_Find",
+			"request": {
+				"url": "http://localhost:8080/api/vehicle/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Api_Vehicle_Find_All",
+			"request": {
+				"url": "http://localhost:8080/api/vehicle/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Api_Vehicle_Find_ByUser",
+			"request": {
+				"url": "http://localhost:8080/api/vehicle/user/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Api_Vehicle_CreateUpdate",
+			"request": {
+				"url": "http://localhost:8080/api/vehicle/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 10,\n\t\"plateNumber\": \"PPP010\",\n\t\"manufacturer\": \"Suzuki\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Api_Vehicle_SetUser",
+			"request": {
+				"url": "http://localhost:8080/api/vehicle/user/4/2",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Api_User_Find_All",
+			"request": {
+				"url": "http://localhost:8080/api/user/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Api_User_Find_ById",
+			"request": {
+				"url": "http://localhost:8080/api/user/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Api_User_CreateUpdate",
+			"request": {
+				"url": "http://localhost:8080/api/user/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 7,\n\t\"surname\": \"Threepwood\",\n\t\"name\": \"Guybrush\",\n\t\"gender\": \"MALE\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
