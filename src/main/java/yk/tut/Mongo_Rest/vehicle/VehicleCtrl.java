@@ -6,7 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,7 +27,7 @@ public class VehicleCtrl {
 		this.userSrv = userSrv;
 	}
 	
-	@GetMapping("/find/{id}")
+	@GetMapping("/{id}")
 	public ResponseEntity<?> find(@PathVariable Long id){
 		Vehicle vehicle = vehicleSrv.findById(id);
 		if(vehicle==null) {
@@ -37,7 +36,7 @@ public class VehicleCtrl {
 		return new ResponseEntity<Vehicle>(vehicle, HttpStatus.OK);
 	}
 	
-	@GetMapping("/find")
+	@GetMapping("/")
 	public ResponseEntity<?> findAll(){
 		List<Vehicle> vehicles = vehicleSrv.findAll();
 		if( vehicles.isEmpty() ) {
@@ -46,7 +45,7 @@ public class VehicleCtrl {
 		return new ResponseEntity<List<Vehicle>>(vehicles, HttpStatus.OK);
 	}
 	
-	@GetMapping("/findByUser/{userId}")
+	@GetMapping("/user/{userId}")
 	public ResponseEntity<?> findByUser(@PathVariable Long userId){
 		User user = userSrv.findById(userId);
 		if(user==null) {
@@ -58,17 +57,8 @@ public class VehicleCtrl {
 		}
 		return new ResponseEntity<Vehicle>(vehicle, HttpStatus.OK);
 	}
-	
-	@PostMapping("/create")
-	public ResponseEntity<?> create(@RequestBody Vehicle vehicle){
-		if(vehicle==null) {
-			return new ResponseEntity<ResponseError>(new ResponseError(22, "Request error, null object."), HttpStatus.BAD_REQUEST);
-		}
-		vehicleSrv.save(vehicle);
-		return new ResponseEntity<Vehicle>(vehicle, HttpStatus.OK);
-	}
 
-	@PutMapping("/update")
+	@PutMapping("/")
 	public ResponseEntity<?> update(@RequestBody Vehicle vehicle){
 		if(vehicle==null) {
 			return new ResponseEntity<ResponseError>(new ResponseError(22, "Request error, null object."), HttpStatus.BAD_REQUEST);
@@ -77,7 +67,7 @@ public class VehicleCtrl {
 		return new ResponseEntity<Vehicle>(vehicle, HttpStatus.OK);
 	} 
 	
-	@PutMapping("{vehicleId}/setUser/{userId}")
+	@PutMapping("user/{userId}/{vehicleId}")
 	public ResponseEntity<?> setUserOnVehicle(@PathVariable Long vehicleId, @PathVariable Long userId) {
 		User user = userSrv.findById(userId);
 		if(user==null) {
